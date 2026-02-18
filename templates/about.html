@@ -1,17 +1,36 @@
+<!-- about.html - information about the app and its purpose -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>About</h1>
-    <p>About page for the project.</p>
-    
     <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> | 
-        <a href="/category/plastic">Plastic</a> | 
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/category/plastic">Plastic</a>
         <a href="/category/organic">Organic</a>
+        <a href="/category/glass">Glass</a>
+        <a href="/category/metal">Metal</a>
+        <a href="/category/paper">Paper</a>
     </nav>
+    <div class="container">
+        <h1>Waste Segregation Guide</h1>
+        
+        <h2>Purpose</h2>
+        <p>This app helps students and young workers sort household waste correctly. 
+        By learning which bin each item belongs to, we can all contribute to a cleaner environment.</p>
+        
+        <h2>Why It Matters</h2>
+        <p>Proper waste segregation reduces landfill waste, increases recycling rates, 
+        and helps protect our environment. When waste is sorted correctly, materials 
+        like plastic, glass, and metal can be recycled into new products.</p>
+        
+        <h2>UN Sustainable Development Goal</h2>
+        <p>This project supports UN SDG Goal 12: Responsible Consumption and Production. 
+        By making informed choices about waste disposal, we can reduce our environmental 
+        impact and move towards a more sustainable future.</p>
+    </div>
 </body>
 </html>

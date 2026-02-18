@@ -1,23 +1,33 @@
+<!-- index.html - home page with welcome message and category links -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome</h1>
-    <p>This is the home page.</p>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/category/plastic">Plastic</a>
+        <a href="/category/organic">Organic</a>
+        <a href="/category/glass">Glass</a>
+        <a href="/category/metal">Metal</a>
+        <a href="/category/paper">Paper</a>
+    </nav>
+    <div class="container">
+    <h1>Waste Segregation Guide</h1>
+    <p>Learn how to sort your household waste correctly.</p>
     
     <h2>Categories</h2>
     <ul>
         <li><a href="/category/plastic">Plastic</a></li>
         <li><a href="/category/organic">Organic</a></li>
+        <li><a href="/category/glass">Glass</a></li>
+        <li><a href="/category/metal">Metal</a></li>
+        <li><a href="/category/paper">Paper</a></li>
     </ul>
     
-    <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> | 
-        <a href="/category/plastic">Plastic</a> | 
-        <a href="/category/organic">Organic</a>
-    </nav>
+    </div>
 </body>
 </html>

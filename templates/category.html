@@ -1,23 +1,29 @@
+<!-- category.html - displays items belonging to a specific waste category -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>{{ category }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>{{ category }}</h1>
-    
-    <p>Items in this category:</p>
-    <ul>
-    {% for item in items %}
-        <li>{{ item }}</li>
-    {% endfor %}
-    </ul>
-    
     <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> | 
-        <a href="/category/plastic">Plastic</a> | 
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/category/plastic">Plastic</a>
         <a href="/category/organic">Organic</a>
+        <a href="/category/glass">Glass</a>
+        <a href="/category/metal">Metal</a>
+        <a href="/category/paper">Paper</a>
     </nav>
+    <div class="container">
+        <h1>{{ category }}</h1>
+        
+        <p>Items in this category:</p>
+        <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
