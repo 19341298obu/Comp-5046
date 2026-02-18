@@ -1,7 +1,25 @@
 {
   "plastic bottle": "Plastic",
+  "plastic bag": "Plastic",
+  "food wrapper": "Plastic",
+  "plastic straw": "Plastic",
+  "plastic container": "Plastic",
   "banana peel": "Organic",
+  "apple core": "Organic",
+  "tea bags": "Organic",
+  "egg shells": "Organic",
+  "vegetable scraps": "Organic",
   "glass jar": "Glass",
+  "wine bottle": "Glass",
+  "glass container": "Glass",
+  "broken glass": "Glass",
   "tin can": "Metal",
-  "newspaper": "Paper"
+  "aluminium foil": "Metal",
+  "metal lid": "Metal",
+  "drink can": "Metal",
+  "newspaper": "Paper",
+  "cardboard box": "Paper",
+  "paper bag": "Paper",
+  "magazine": "Paper",
+  "office paper": "Paper"
 }
