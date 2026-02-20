@@ -44,7 +44,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-App runs at: http://127.0.0.1:5001/
+App runs at: http://127.0.0.1:5050/
+
+> If port 5050 is in use, change it in app.py or set PORT environment variable.
 
 ## Project Structure
 
