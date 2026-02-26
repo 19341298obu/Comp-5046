@@ -1,6 +1,6 @@
 # app.py - waste segregation guide
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 import os
 
@@ -30,6 +30,17 @@ def about():
 def category(name):
     items = [item for item, cat in waste_data.items() if cat.lower() == name.lower()]
     return render_template('category.html', category=name, items=items)
+
+@app.route('/search')
+def search():
+    query = request.args.get('q', '')
+    results = []
+    if query:
+        # case-insensitive partial match
+        for item, cat in waste_data.items():
+            if query.lower() in item.lower():
+                results.append({'item': item, 'category': cat})
+    return render_template('search.html', query=query, results=results)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5050))

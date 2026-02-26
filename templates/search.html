@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ category }}</title>
+    <title>Search</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -16,14 +16,22 @@
         <a href="/category/paper">Paper</a>
     </nav>
     <div class="container">
-        <h1>{{ category }}</h1>
+        <h1>Search</h1>
+        <p>Find out which bin your waste belongs to.</p>
         
-        <p>Items in this category:</p>
+        <form action="/search" method="get">
+            <input type="text" name="q" placeholder="Enter item name..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+        
+        {% if results %}
+        <h2>Results</h2>
         <ul>
-        {% for item in items %}
-            <li>{{ item }}</li>
-        {% endfor %}
+            {% for r in results %}
+            <li>{{ r.item }} - <strong>{{ r.category }}</strong></li>
+            {% endfor %}
         </ul>
+        {% endif %}
     </div>
 </body>
 </html>
