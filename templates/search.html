@@ -19,18 +19,22 @@
         <h1>Search</h1>
         <p>Find out which bin your waste belongs to.</p>
         
-        <form action="/search" method="get">
+        <form action="/search" method="get" class="search-form">
             <input type="text" name="q" placeholder="Enter item name..." value="{{ query }}">
             <button type="submit">Search</button>
         </form>
         
         {% if results %}
         <h2>Results</h2>
-        <ul>
+        <ul class="search-results">
             {% for r in results %}
             <li>{{ r.item }} - <strong>{{ r.category }}</strong></li>
             {% endfor %}
         </ul>
+        {% elif query %}
+        <div class="not-found">
+            <p>Sorry, we don't have information about "{{ query }}". Try searching for something else.</p>
+        </div>
         {% endif %}
     </div>
 </body>
