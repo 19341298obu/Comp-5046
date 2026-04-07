@@ -6,14 +6,19 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/search">Search</a>
-        <a href="/about">About</a>
-        <a href="/category/plastic">Plastic</a>
-        <a href="/category/organic">Organic</a>
-        <a href="/category/glass">Glass</a>
-        <a href="/category/metal">Metal</a>
-        <a href="/category/paper">Paper</a>
+        <div class="nav-main">
+            <a href="/">Home</a>
+            <a href="/search" class="active">Search</a>
+            <a href="/about">About</a>
+        </div>
+        <div class="nav-categories">
+            <span class="nav-label">Categories:</span>
+            <a href="/category/plastic">Plastic</a>
+            <a href="/category/organic">Organic</a>
+            <a href="/category/glass">Glass</a>
+            <a href="/category/metal">Metal</a>
+            <a href="/category/paper">Paper</a>
+        </div>
     </nav>
     <div class="container">
         <h1>Search</h1>
@@ -37,5 +42,8 @@
         </div>
         {% endif %}
     </div>
+    <footer>
+        <p>Waste Segregation Guide - COMP5046 - UN SDG Goal 12</p>
+    </footer>
 </body>
 </html>

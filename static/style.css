@@ -9,41 +9,68 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 20px;
+    flex: 1;
 }
 
 nav {
     background-color: #2e7d32;
-    padding: 15px;
+    padding: 0;
+}
+
+.nav-main {
+    background-color: #1b5e20;
+    padding: 12px;
     text-align: center;
+}
+
+.nav-categories {
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-label {
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 10px;
+    font-size: 14px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 8px 12px;
-    margin: 0 5px;
+    padding: 8px 14px;
+    margin: 0 3px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 nav a:hover {
-    background-color: #1b5e20;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+    background-color: #4caf50;
 }
 
 h1 {
     color: #2e7d32;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     text-align: center;
+    font-size: 28px;
 }
 
 h2 {
     color: #388e3c;
-    margin: 15px 0;
+    margin: 25px 0 15px 0;
+    font-size: 20px;
 }
 
 p {
@@ -57,30 +84,41 @@ ul {
 
 ul li {
     background-color: white;
-    padding: 10px 15px;
-    margin: 5px 0;
+    padding: 12px 18px;
+    margin: 8px 0;
     border-left: 4px solid #4caf50;
     border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 ul li a {
     color: #2e7d32;
     text-decoration: none;
+    font-weight: 500;
 }
 
 ul li a:hover {
     text-decoration: underline;
 }
 
+.category-list li {
+    display: flex;
+    align-items: center;
+}
+
+.item-list li {
+    text-transform: capitalize;
+}
+
 .search-form {
-    margin: 20px 0;
+    margin: 25px 0;
     display: flex;
     gap: 10px;
 }
 
 .search-form input {
     flex: 1;
-    padding: 12px 15px;
+    padding: 14px 18px;
     border: 2px solid #4caf50;
     border-radius: 4px;
     font-size: 16px;
@@ -89,16 +127,18 @@ ul li a:hover {
 .search-form input:focus {
     outline: none;
     border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
 .search-form button {
-    padding: 12px 25px;
+    padding: 14px 28px;
     background-color: #2e7d32;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .search-form button:hover {
@@ -112,8 +152,8 @@ ul li a:hover {
 .not-found {
     background-color: #fff3e0;
     border-left: 4px solid #ff9800;
-    padding: 15px;
-    margin: 20px 0;
+    padding: 18px;
+    margin: 25px 0;
     border-radius: 4px;
 }
 
@@ -122,14 +162,41 @@ ul li a:hover {
     margin: 0;
 }
 
+footer {
+    background-color: #1b5e20;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
 @media (max-width: 600px) {
+    .nav-main, .nav-categories {
+        padding: 10px 5px;
+    }
+    
     nav a {
+        padding: 6px 10px;
+        margin: 2px;
+        font-size: 14px;
+    }
+    
+    .nav-label {
         display: block;
-        margin: 5px 0;
+        margin-bottom: 8px;
     }
     
     .container {
-        padding: 10px;
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
     }
     
     .search-form {
