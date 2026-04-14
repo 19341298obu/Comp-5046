@@ -30,12 +30,15 @@
         </form>
         
         {% if results %}
-        <h2>Results</h2>
-        <ul class="search-results">
+        <h2>Results ({{ results|length }})</h2>
+        <div class="search-results">
             {% for r in results %}
-            <li>{{ r.item }} - <strong>{{ r.category }}</strong></li>
+            <div class="item-card">
+                <h3>{{ r.name }} <span class="category-tag">{{ r.category }}</span></h3>
+                <p>{{ r.description }}</p>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
         {% elif query %}
         <div class="not-found">
             <p>Sorry, we don't have information about "{{ query }}". Try searching for something else.</p>

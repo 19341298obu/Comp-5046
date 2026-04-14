@@ -14,7 +14,7 @@ def load_data():
         return data
     except:
         print("error loading data.json")
-        return {}
+        return []
 
 waste_data = load_data()
 
@@ -28,7 +28,7 @@ def about():
 
 @app.route('/category/<name>')
 def category(name):
-    items = [item for item, cat in waste_data.items() if cat.lower() == name.lower()]
+    items = [item for item in waste_data if item['category'].lower() == name.lower()]
     return render_template('category.html', category=name, items=items)
 
 @app.route('/search')
@@ -36,10 +36,9 @@ def search():
     query = request.args.get('q', '')
     results = []
     if query:
-        # case-insensitive partial match
-        for item, cat in waste_data.items():
-            if query.lower() in item.lower():
-                results.append({'item': item, 'category': cat})
+        for item in waste_data:
+            if query.lower() in item['name'].lower():
+                results.append(item)
     return render_template('search.html', query=query, results=results)
 
 if __name__ == '__main__':

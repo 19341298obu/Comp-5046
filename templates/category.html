@@ -23,12 +23,15 @@
     <div class="container">
         <h1>{{ category }}</h1>
         
-        <p>Items in this category:</p>
-        <ul class="item-list">
+        <p>Items in this category ({{ items|length }}):</p>
+        <div class="item-list">
         {% for item in items %}
-            <li>{{ item }}</li>
+            <div class="item-card">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
         {% endfor %}
-        </ul>
+        </div>
     </div>
     <footer>
         <p>Waste Segregation Guide - COMP5046 - UN SDG Goal 12</p>
