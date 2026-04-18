@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Thank You</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav>
         <div class="nav-main">
-            <a href="/" class="active">Home</a>
+            <a href="/">Home</a>
             <a href="/search">Search</a>
             <a href="/about">About</a>
             <a href="/recycling-rules">Recycling Rules</a>
@@ -23,21 +23,10 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Waste Segregation Guide</h1>
-        <p>Learn how to sort your household waste correctly.</p>
-        
-        <h2>Categories</h2>
-        <ul class="category-list">
-            <li><a href="/category/plastic">Plastic</a></li>
-            <li><a href="/category/organic">Organic</a></li>
-            <li><a href="/category/glass">Glass</a></li>
-            <li><a href="/category/metal">Metal</a></li>
-            <li><a href="/category/paper">Paper</a></li>
-        </ul>
-        
-        <div class="info-box">
-            <h3>New in this release</h3>
-            <p>Check the <a href="/recycling-rules">Recycling Rules</a> for local guidelines, and share your thoughts on the <a href="/feedback">Feedback</a> page.</p>
+        <div class="success-box">
+            <h1>Thank you, {{ name }}!</h1>
+            <p>Your feedback has been received. We appreciate you taking the time to help us improve the Waste Segregation Guide.</p>
+            <p><a href="/">Return to Home</a> | <a href="/feedback">Submit more feedback</a></p>
         </div>
     </div>
     <footer>
